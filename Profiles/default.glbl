@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>default</name>
+   <tag></tag>
+   <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description>Login marketing Kedoya</description>
+      <initValue>'86941214'</initValue>
+      <name>Marketing</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Password Global</description>
+      <initValue>'Password123$'</initValue>
+      <name>Password</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>
