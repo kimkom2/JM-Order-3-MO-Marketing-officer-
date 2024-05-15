@@ -48,6 +48,7 @@ for (int baris = 1; baris <= Hohendy.getRowNumbers(); baris++)
 			Mobile.tap(findTestObject('Object Repository/Form Disclaimer/Button - Sumbit Form'), 0)
 			Mobile.delay(3)
 			Mobile.tap(findTestObject('Object Repository/Form Disclaimer/Button - Submit'), 0)
+			Mobile.delay(15)
 			
     }
 }

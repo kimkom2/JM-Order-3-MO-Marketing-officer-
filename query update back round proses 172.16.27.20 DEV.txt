@@ -1,0 +1,91 @@
+SELECT TOP 2 A.CREATED_AT,* FROM DATAPENGAJUAN A
+ORDER BY A.CREATED_AT DESC
+
+SELECT A.NO_REGISTRASI,CREATED_AT,tipe_kendaraan,tahun_kendaraan,harga_perolehan,uang_muka,
+(
+	select NoRegistrasiInputUlang from datapengajuantemp xx where xx.no_registrasi = a.no_registrasi
+)as NoRegistrasiInputUlang,
+(
+	select IsInputUlang from datapengajuantemp xx where xx.no_registrasi = a.no_registrasi
+)as IsInputUlang,
+case 
+when Tipe_produk ='1' then 'New Bike'
+when Tipe_produk ='3' then 'New Car'
+when Tipe_produk ='4' then 'Used Car'
+when Tipe_produk ='7' then 'Dahsyat Bike'
+when Tipe_produk ='8' then 'Dahsyat Car'
+else ''end as Tipe_produk 
+,statuscustomer , statusspouse ,status,
+LABEL,
+case
+	when dedupresult ='STOP' and nbsmresult ='STOP' and cbasresult ='STOP' 
+	then (select top 1  Reason from dedupresult zz where zz.no_Registrasi = a.no_registrasi and value ='stop') + '  &  ' +
+	(select top 1 variable from NBSMRESULT zz where zz.no_Registrasi = a.no_registrasi and value ='stop')+ '  &  ' +
+	(select top 1  resultid from cbasresult zz where zz.no_Registrasi = a.no_registrasi and value ='stop')
+
+	when dedupresult ='STOP' and nbsmresult ='STOP' 
+	then (select top 1  Reason from dedupresult zz where zz.no_Registrasi = a.no_registrasi and value ='stop') + '  &  ' +
+	(select top 1 variable from NBSMRESULT zz where zz.no_Registrasi = a.no_registrasi and value ='stop')
+
+	when dedupresult ='STOP' and cbasresult ='STOP' 
+	then (select top 1  Reason from dedupresult zz where zz.no_Registrasi = a.no_registrasi and value ='stop') + '  &  ' +
+	(select top 1  resultid from cbasresult zz where zz.no_Registrasi = a.no_registrasi and value ='stop')
+
+	when nbsmresult ='STOP' and cbasresult ='STOP' 
+	then (select top 1 variable from NBSMRESULT zz where zz.no_Registrasi = a.no_registrasi and value ='stop') + '  &  ' +
+	(select top 1  resultid from cbasresult zz where zz.no_Registrasi = a.no_registrasi and value ='stop')
+
+	when dedupresult ='STOP' and scorecardresult ='STOP' 
+	then (select top 1  Reason from dedupresult zz where zz.no_Registrasi = a.no_registrasi and value ='stop') + '  &  ' +
+	'Tidak sesuai dengan ScoreCardRange'
+
+	when dedupresult ='STOP' then (select top 1  Reason from dedupresult zz where zz.no_Registrasi = a.no_registrasi and value ='stop')
+
+	when nbsmresult ='STOP' then (select top 1 variable from NBSMRESULT zz where zz.no_Registrasi = a.no_registrasi and value ='stop')
+
+	when cbasresult ='STOP' then (select top 1  resultid from cbasresult zz where zz.no_Registrasi = a.no_registrasi and value ='stop')
+
+	when scorecardresult ='STOP' and status ='39' then 'Tidak sesuai dengan Matrix low rank Newbike'
+
+	when scorecardresult ='STOP' then 'Tidak sesuai dengan ScoreCardRange'
+	else '-'
+end as Description_testing
+,
+dedupresult ,
+nbsmresult , 
+cbasresult, 
+(select resultid from CBASSummary dd where dd.no_registrasi = a.no_registrasi) as CBASS_description,
+isnull(scorecardresult,'-') as scorecardresult,
+isnull(Value,'-') as Value
+ FROM DataPengajuan A
+inner join mobileapps..M_Status_v2 b
+on a.status =b.id
+LEFT JOIN ScoreCardSummary C
+ON C.NO_REGISTRASI = A.NO_REGISTRASI
+WHERE a.NO_REGISTRASI  in
+(
+'W839240500002'
+)
+
+--- UPDATE STEP 1
+--update datapengajuan
+--set status ='20', is_clear=1, is_verified=1, is_instantapproval=0, is_instantapprovalfinal=0
+--where no_registrasi in('W839240500002')
+
+----------- UPDATE STEP 2
+--------- INSERT CBAS JIKA SINGLE
+--insert into CBASResult values('KATALON01','W839240500002','NEXT','NOTFOUNDDEDUP','NOT FOUND DEDUP','5',getdate())
+--update datapengajuan
+--set reffnumber ='KATALON01'
+--where no_registrasi ='W839240500002'
+
+
+------------- UPDATE STEP 2
+--------------- INSERT CBAS JIKA MENIKAH
+--insert into CBASResult values('KATALON02','W839240500002','NEXT','NOTFOUNDDEDUP','NOT FOUND DEDUP','5',getdate())
+--insert into CBASResult values('KATALON03','W839240500002','NEXT','NOTFOUNDDEDUP','NOT FOUND DEDUP','5',getdate())
+
+--update datapengajuan
+--set reffnumber ='KATALON02', reffnumberpasangan = 'KATALON03'
+--where no_registrasi ='W839240500002'
+

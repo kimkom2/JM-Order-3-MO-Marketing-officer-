@@ -14,4 +14,19 @@
       <initValue>'Password123$'</initValue>
       <name>Password</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Connection DB Dev</description>
+      <initValue>'jdbc:sqlserver://172.16.27.20\\SQLEXPRESS;databaseName=WebApps'</initValue>
+      <name>DB_URL_DEV_20</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>user name DB dev</description>
+      <initValue>'sa'</initValue>
+      <name>User_DB_DEV</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Password DB Dev</description>
+      <initValue>'anjf99788$'</initValue>
+      <name>db_dev_pas</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

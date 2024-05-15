@@ -17,7 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Mobile.startApplication('jmorder3 6.2.1.1 dev.apk', true)
+Mobile.startApplication('jmorder3 6.2.1.2 dev.apk', true)
 
 Mobile.setText(findTestObject('Object Repository/Form Login/UserID'), GlobalVariable.Marketing, 0)
 

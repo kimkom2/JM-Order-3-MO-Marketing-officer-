@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>Param MO MAP</name>
+   <tag></tag>
+   <connectionProperties/>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>be84aa9f-3db5-40c6-a2f2-fc39339b4502</dataFileGUID>
+   <dataSourceUrl></dataSourceUrl>
+   <driver>DBData</driver>
+   <driverClassName></driverClassName>
+   <isInternalPath>false</isInternalPath>
+   <password></password>
+   <query>SELECT TOP 1 NO_REGISTRASI,created_at,status FROM DATAPENGAJUAN&#xd;
+WHERE STATUS IN('3' ,'51')&#xd;
+AND CONVERT(varchar, created_at, 101) = CONVERT(varchar, getdate(), 101)&#xd;
+order by created_at desc</query>
+   <secureUserAccount>false</secureUserAccount>
+   <sheetName></sheetName>
+   <user></user>
+   <usingGlobalDBSetting>true</usingGlobalDBSetting>
+</DataFileEntity>
