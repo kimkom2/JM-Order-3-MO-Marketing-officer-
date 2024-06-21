@@ -16,7 +16,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Connection DB Dev</description>
-      <initValue>'jdbc:sqlserver://172.16.27.20\\SQLEXPRESS;databaseName=WebApps'</initValue>
+      <initValue>'jdbc:sqlserver://172.16.27.20\\SQLEXPRESS'</initValue>
       <name>DB_URL_DEV_20</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -28,5 +28,10 @@
       <description>Password DB Dev</description>
       <initValue>'anjf99788$'</initValue>
       <name>db_dev_pas</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Login untuk Credit officer</description>
+      <initValue>'67420923'</initValue>
+      <name>Creditofficer</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

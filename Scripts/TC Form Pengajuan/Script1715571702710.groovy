@@ -25,7 +25,8 @@ for (int baris = 1; baris <= Hohendy.getRowNumbers(); baris++)
 	{
     if (Hohendy.getValue('Use', baris) == 'Yes') 
 		{
-		
+			
+			Mobile.delay(3)
 			Mobile.tap(findTestObject('Object Repository/Form Pengajuan/Spinner Nama Supplier'), 0)
 			Mobile.delay(1)
 			Mobile.setText(findTestObject('Object Repository/Form Pengajuan/Prod/AutoCompleteTextView'),Hohendy.getValue('Nama Supplier', baris), 0)

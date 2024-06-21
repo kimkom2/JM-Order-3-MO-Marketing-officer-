@@ -12,7 +12,7 @@
    <driverClassName></driverClassName>
    <isInternalPath>false</isInternalPath>
    <password></password>
-   <query>SELECT TOP 1 NO_REGISTRASI,created_at,status FROM DATAPENGAJUAN&#xd;
+   <query>SELECT TOP 1 NO_REGISTRASI,created_at,status FROM webapps..DATAPENGAJUAN&#xd;
 WHERE STATUS IN('3' ,'51')&#xd;
 AND CONVERT(varchar, created_at, 101) = CONVERT(varchar, getdate(), 101)&#xd;
 order by created_at desc</query>

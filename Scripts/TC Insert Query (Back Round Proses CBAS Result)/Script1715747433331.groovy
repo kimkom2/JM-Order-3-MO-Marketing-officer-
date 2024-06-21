@@ -30,7 +30,7 @@ def sql = Sql.newInstance(dbUrl, dbUser, dbPassword)
 
 // Tulis SQL query
 //def query = "DECLARE @parameter varchar(50); SET @parameter = (SELECT TOP 1 NO_REGISTRASI FROM DATAPENGAJUAN  WHERE STATUS IN('27') AND CONVERT(varchar, created_at, 101) = CONVERT(varchar, getdate(), 101)); INSERT INTO CBASResult VALUES (@parameter+'AUTO1',@parameter,'NEXT','NOTFOUNDDEDUP','NOT FOUND DEDUP','5',getdate()) INSERT INTO CBASResult VALUES (@parameter+'AUTO2',@parameter,'NEXT','NOTFOUNDDEDUP','NOT FOUND DEDUP','5',getdate()) SELECT * FROM CBASResult WHERE NO_REGISTRASI =@parameter"
-def query = "DECLARE @parameter varchar(50); SET @parameter = (SELECT TOP 1 NO_REGISTRASI FROM DATAPENGAJUAN  WHERE STATUS IN('27') AND CONVERT(varchar, created_at, 101) = CONVERT(varchar, getdate(), 101) ORDER BY created_at DESC); INSERT INTO CBASResult VALUES (@parameter+'AUTO1',@parameter,'NEXT','NOTFOUNDDEDUP','NOT FOUND DEDUP','5',getdate()) INSERT INTO CBASResult VALUES (@parameter+'AUTO2',@parameter,'NEXT','NOTFOUNDDEDUP','NOT FOUND DEDUP','5',getdate()) SELECT * FROM CBASResult WHERE NO_REGISTRASI =@parameter"
+def query = "DECLARE @parameter varchar(50); SET @parameter = (SELECT TOP 1 NO_REGISTRASI FROM [webapps]..DATAPENGAJUAN  WHERE STATUS IN('27') AND CONVERT(varchar, created_at, 101) = CONVERT(varchar, getdate(), 101) ORDER BY created_at DESC); INSERT INTO [webapps]..CBASResult VALUES (@parameter+'AUTO1',@parameter,'NEXT','NOTFOUNDDEDUP','NOT FOUND DEDUP','5',getdate()) INSERT INTO [webapps]..CBASResult VALUES (@parameter+'AUTO2',@parameter,'NEXT','NOTFOUNDDEDUP','NOT FOUND DEDUP','5',getdate()) SELECT * FROM [webapps]..CBASResult WHERE NO_REGISTRASI =@parameter"
 // Eksekusi query
 def result = sql.rows(query)
 
