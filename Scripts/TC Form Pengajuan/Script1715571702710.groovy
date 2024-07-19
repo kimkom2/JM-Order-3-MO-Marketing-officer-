@@ -49,6 +49,16 @@ for (int baris = 1; baris <= Hohendy.getRowNumbers(); baris++)
 				Mobile.tap(findTestObject('Object Repository/Form Pengajuan/Bpkb/BPKB '+ Hohendy.getValue('BPKB Jaminan', baris)), 0, FailureHandling.OPTIONAL)
 				Mobile.hideKeyboard()
 				Mobile.delay(1)
+				
+				Mobile.tap(findTestObject('Object Repository/Form Pengajuan/Contract TOP UP/Spinner Contract Top Up'), 0)
+				Mobile.delay(1)
+				Mobile.tap(findTestObject('Object Repository/Form Pengajuan/Contract TOP UP/android.widget.AutoCompleteTextView'), 0)
+				Mobile.delay(1)
+				Mobile.setText(findTestObject('Object Repository/Form Pengajuan/Contract TOP UP/android.widget.AutoCompleteTextView'),Hohendy.getValue('Contract Top up', baris), 0)
+				Mobile.delay(1)
+				Mobile.tap(findTestObject('Object Repository/Form Pengajuan/Contract TOP UP/android.widget.TextView - 50224116010452'), 0)
+				Mobile.hideKeyboard()
+				Mobile.delay(1)				
 			}
 			
 //			if (Hohendy.getValue('Use', baris) == 'Yes' && Hohendy.getValue('Tipe Produk', baris) == 'Dahsyat - Multipurpose 4W')
@@ -59,6 +69,8 @@ for (int baris = 1; baris <= Hohendy.getRowNumbers(); baris++)
 //				Mobile.hideKeyboard()
 //				Mobile.delay(1)
 //			}
+			
+			Mobile.swipe(0, 600, 0, 0)
 			
 			Mobile.tap(findTestObject('Object Repository/Form Pengajuan/Spinner Source of application'), 0)
 			Mobile.delay(1)						
@@ -82,7 +94,6 @@ for (int baris = 1; baris <= Hohendy.getRowNumbers(); baris++)
 			Mobile.hideKeyboard()
 			Mobile.delay(1)
 			
-
 			Mobile.tap(findTestObject('Object Repository/Form Pengajuan/EditText Harga Kendaraan'), 0)
 			Mobile.delay(1)
 			Mobile.setText(findTestObject('Object Repository/Form Pengajuan/EditText Harga Kendaraan'),Hohendy.getValue('Harga Kendaraan', baris), 0)
@@ -109,7 +120,7 @@ for (int baris = 1; baris <= Hohendy.getRowNumbers(); baris++)
 				Mobile.hideKeyboard()
 			}			
 			Mobile.swipe(0, 600, 0, 0)
-			WebUI.delay(1)			
+			Mobile.delay(1)			
 			Mobile.tap(findTestObject('Object Repository/Form Pengajuan/EditText - Tenor'), 0)
 			Mobile.delay(1)
 			Mobile.setText(findTestObject('Object Repository/Form Pengajuan/EditText - Tenor'),Hohendy.getValue('Tenor', baris), 0)

@@ -34,4 +34,19 @@
       <initValue>'67420923'</initValue>
       <name>Creditofficer</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'jdbc:sqlserver://172.16.26.83'</initValue>
+      <name>URLDBTrain</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'P@ssw0rd'</initValue>
+      <name>PassTrain</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'sa'</initValue>
+      <name>userTrain</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

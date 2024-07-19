@@ -23,7 +23,7 @@ TestData Hohendy = findTestData('Data Files/Param Pemohon')
 
 Mobile.tap(findTestObject('Object Repository/Form Order/Form Order'), 0)
 
-WebUI.delay(1)
+Mobile.delay(1)
 
 Mobile.tap(findTestObject('Object Repository/Form Order/Buat Pengajuan'), 0)
 
@@ -35,11 +35,11 @@ for (int baris = 1; baris <= Hohendy.getRowNumbers(); baris++)
 				
 				Mobile.tap(findTestObject('Object Repository/Form Order/Input Applikasi Please Select'), 0)
 				
-				WebUI.delay(1)
+				Mobile.delay(1)
 				
 				Mobile.tap(findTestObject('Object Repository/Form Order/Input Applikasi/Select '+ Hohendy.getValue('Select Applikasi', baris)), 0, FailureHandling.OPTIONAL)
 				
-				WebUI.delay(1)
+				Mobile.delay(1)
 				
 					if (Hohendy.getValue('Select Applikasi', baris) == 'Cancel atau Input ulang')
 					{
@@ -47,7 +47,7 @@ for (int baris = 1; baris <= Hohendy.getRowNumbers(); baris++)
 						
 						Mobile.hideKeyboard()
 							
-						WebUI.delay(1)
+						Mobile.delay(1)
 							
 						Mobile.tap(findTestObject('Object Repository/Form Order/Button Search'), 0)
 						

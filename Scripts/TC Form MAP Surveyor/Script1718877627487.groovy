@@ -26,7 +26,7 @@ TestData Dataparampemohon = findTestData('Data Files/Param Pemohon')
 //Mobile.startExistingApplication('id.co.jmpmf.jmo3')
 
 Mobile.tap(findTestObject('Object Repository/MAP Surveyor/Form MAP Surveyor'), 0)
-WebUI.delay(1)
+Mobile.delay(1)
 
 Mobile.tap(findTestObject('Object Repository/MAP Surveyor/android.widget.AutoCompleteTextView - Masukkan kata kunci'), 0)
 Mobile.delay(1)
@@ -111,10 +111,10 @@ if (Dataparampemohon.getValue('Use', baris) == 'Yes')
 		Mobile.swipe(0, 600, 0, 0)
 		
 		Mobile.tap(findTestObject('Object Repository/MAP Surveyor/android.widget.Button - SIMPAN'), 0)			
-		WebUI.delay(2)
+		Mobile.delay(2)
 		
 		Mobile.tap(findTestObject('Object Repository/MAP Surveyor/android.widget.Button - SUBMIT'), 0)
-		WebUI.delay(4)
+		Mobile.delay(4)
 	}		
 }
 

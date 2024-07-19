@@ -28,11 +28,11 @@ for (int baris = 1; baris <= Hohendy.getRowNumbers(); baris++)
 				
 				Mobile.tap(findTestObject('Object Repository/Form Order/Pernikahan/Pilih Status Pernikahan'), 0)
 				
-				WebUI.delay(1)
+				Mobile.delay(1)
 				
 				Mobile.tap(findTestObject('Object Repository/Form Order/Pernikahan/Status '+ Hohendy.getValue('Status', baris)), 0, FailureHandling.OPTIONAL)
 		
-				WebUI.delay(1)
+				Mobile.delay(1)
 				
 				Mobile.tap(findTestObject('Object Repository/Form Order/Button - Selanjutnya'), 0)
 			}

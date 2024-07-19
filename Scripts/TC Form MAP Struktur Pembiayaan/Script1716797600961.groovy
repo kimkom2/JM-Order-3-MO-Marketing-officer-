@@ -43,17 +43,37 @@ if (Hohendy.getValue('Use', baris) == 'Yes')
 		Mobile.setText(findTestObject('Object Repository/Form Struktur Pembiayaan/EditText - Biaya Admin'), Hohendy.getValue('Biaya Admin', baris), 0)
 		Mobile.hideKeyboard()
 		
+		if (Hohendy.getValue('Use', baris) == 'Yes' && Hohendy.getValue('Admin Cap', baris) == 'Yes')
+		{
+			Mobile.tap(findTestObject('Object Repository/Form Struktur Pembiayaan/Capitalize/CheckBox - Capitalize BiayaAdmin'), 0)
+		}
+		
 		Mobile.setText(findTestObject('Object Repository/Form Struktur Pembiayaan/EditText - Biaya Fidusia'), Hohendy.getValue('Biaya Fiducia', baris), 0)
 		Mobile.hideKeyboard()
 		
+		if (Hohendy.getValue('Use', baris) == 'Yes' && Hohendy.getValue('Fiducia Cap', baris) == 'Yes')
+		{
+			Mobile.tap(findTestObject('Object Repository/Form Struktur Pembiayaan/Capitalize/CheckBox - Capitalize BiayaFidusia'), 0)
+		}
+		
 		Mobile.setText(findTestObject('Object Repository/Form Struktur Pembiayaan/EditText - Biaya Survey'), Hohendy.getValue('Biaya Survey', baris), 0)
 		Mobile.hideKeyboard()
+		
+		if (Hohendy.getValue('Use', baris) == 'Yes' && Hohendy.getValue('Survey Cap', baris) == 'Yes')
+		{
+			Mobile.tap(findTestObject('Object Repository/Form Struktur Pembiayaan/Capitalize/CheckBox - Capitalize Biaya Survey'), 0)
+		}
 		
 		Mobile.setText(findTestObject('Object Repository/Form Struktur Pembiayaan/EditText - Biaya Provisi Persen'), Hohendy.getValue('Provisi Persen', baris), 0)
 		Mobile.hideKeyboard()
 		
 		Mobile.setText(findTestObject('Object Repository/Form Struktur Pembiayaan/EditText - Biaya Provisi'), Hohendy.getValue('Biaya Provisi', baris), 0)
 		Mobile.hideKeyboard()
+		
+		if (Hohendy.getValue('Use', baris) == 'Yes' && Hohendy.getValue('Provisi Cap', baris) == 'Yes')
+		{
+			Mobile.tap(findTestObject('Object Repository/Form Struktur Pembiayaan/Capitalize/CheckBox - Capitalize Biaya Provisi'), 0)
+		}
 		
 	
 	while (true)
@@ -76,7 +96,7 @@ if (Hohendy.getValue('Use', baris) == 'Yes')
 				Mobile.tap(findTestObject('Object Repository/Form Struktur Pembiayaan/Rate/Skema '+ Hohendy.getValue('Skema', baris)), 0, FailureHandling.OPTIONAL)
 				
 				Mobile.tap(findTestObject('Object Repository/Form Struktur Pembiayaan/Tipe Angsuran/Spinner Tipe Angsuran'), 0)
-				WebUI.delay(1)
+				Mobile.delay(1)
 				Mobile.tap(findTestObject('Object Repository/Form Struktur Pembiayaan/Tipe Angsuran/Tipe '+ Hohendy.getValue('Tipe Angsuran', baris)), 0, FailureHandling.OPTIONAL)
 				
 				break
@@ -91,7 +111,7 @@ if (Hohendy.getValue('Use', baris) == 'Yes')
 		Mobile.delay(1)	
 		
 		Mobile.tap(findTestObject('Object Repository/Form Struktur Pembiayaan/android.widget.Button - SIMPAN'), 0)			
-		WebUI.delay(4)
+		Mobile.delay(4)
 	}		
 }
 

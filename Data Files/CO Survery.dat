@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>CO Survery</name>
+   <tag></tag>
+   <connectionProperties/>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>b2754322-ce33-4e50-b6ff-3dae43dc09e4</dataFileGUID>
+   <dataSourceUrl></dataSourceUrl>
+   <driver>DBData</driver>
+   <driverClassName></driverClassName>
+   <isInternalPath>false</isInternalPath>
+   <password></password>
+   <query>SELECT TOP 10 NO_REGISTRASI,created_at,status FROM webapps..DATAPENGAJUAN&#xd;
+WHERE 1=1&#xd;
+and STATUS IN('204')&#xd;
+AND CONVERT(varchar, created_at, 101) = CONVERT(varchar, getdate(), 101)&#xd;
+order by created_at desc</query>
+   <secureUserAccount>false</secureUserAccount>
+   <sheetName></sheetName>
+   <user></user>
+   <usingGlobalDBSetting>true</usingGlobalDBSetting>
+</DataFileEntity>

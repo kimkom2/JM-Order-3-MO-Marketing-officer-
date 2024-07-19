@@ -16,7 +16,7 @@ order by created_at desc</description>
    <isInternalPath>false</isInternalPath>
    <password></password>
    <query>SELECT TOP 1 NO_REGISTRASI,created_at,status FROM webapps..DATAPENGAJUAN&#xd;
-WHERE STATUS IN('204')&#xd;
+WHERE STATUS IN('205')&#xd;
 AND CONVERT(varchar, created_at, 101) = CONVERT(varchar, getdate(), 101)&#xd;
 order by created_at desc</query>
    <secureUserAccount>false</secureUserAccount>
